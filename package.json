@@ -1,0 +1,39 @@
+{
+  "name": "eslint-config-disable-bad-rules",
+  "version": "0.0.0",
+  "description": "Turns off ESLint rules that makes you write worse code.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:yaml && npm run lint:md && npm run lint:md:relative-urls && npm run lint:md:external-urls && npm run lint:md:consistency",
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:yaml": "yamllint **/*.yaml --ignore=node_modules/**/*.yaml",
+    "lint:md": "markdownlint **/*.md --ignore node_modules",
+    "lint:md:relative-urls": "remark . --frail --use remark-validate-links",
+    "lint:md:external-urls": "remark . --frail --use remark-lint-no-dead-urls",
+    "lint:md:consistency": "remark . --frail --use remark-preset-lint-consistent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undergroundwires/eslint-config-disable-bad-rules.git"
+  },
+  "author": "undergroundwires",
+  "keywords": [
+    "eslint",
+    "config",
+    "canonical"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/undergroundwires/eslint-config-disable-bad-rules/issues"
+  },
+  "homepage": "https://github.com/undergroundwires/eslint-config-disable-bad-rules#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "markdownlint-cli": "^0.31.1",
+    "remark-cli": "^10.0.1",
+    "remark-lint-no-dead-urls": "^1.1.0",
+    "remark-preset-lint-consistent": "^5.1.1",
+    "remark-validate-links": "^11.0.2",
+    "yaml-lint": "^1.2.4"
+  }
+}
