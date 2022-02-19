@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-disable-bad-rules",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Turns off ESLint rules that makes you write worse code.",
   "main": "index.js",
   "scripts": {
